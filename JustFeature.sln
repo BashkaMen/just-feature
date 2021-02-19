@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "JustFeature", "JustFeature\JustFeature.fsproj", "{751B4005-64BA-450E-8558-2276CC345134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustFeature.CSharp", "JustFeature.CSharp\JustFeature.CSharp.csproj", "{AD96F1AE-35F5-4CDF-8D1C-15767CDD7EC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{751B4005-64BA-450E-8558-2276CC345134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751B4005-64BA-450E-8558-2276CC345134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751B4005-64BA-450E-8558-2276CC345134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751B4005-64BA-450E-8558-2276CC345134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD96F1AE-35F5-4CDF-8D1C-15767CDD7EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD96F1AE-35F5-4CDF-8D1C-15767CDD7EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD96F1AE-35F5-4CDF-8D1C-15767CDD7EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD96F1AE-35F5-4CDF-8D1C-15767CDD7EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
