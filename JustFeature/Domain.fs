@@ -11,7 +11,7 @@ type Feature =
     | FCustom of (unit -> bool)
 
 
-module FeatureModule =
+module Feature =
     let private random = Random()
 
     let isEnabled = function
@@ -22,7 +22,7 @@ module FeatureModule =
         | FCustom func -> func()
     
 
-    let run feature ifEnabled ifDisabled =
+    let run ifEnabled ifDisabled feature =
         match isEnabled feature with
         | true -> ifEnabled()
         | false -> ifDisabled()

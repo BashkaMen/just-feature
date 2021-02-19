@@ -2,7 +2,7 @@
 
 open System
 open System.Runtime.CompilerServices
-open FeatureModule
+open Feature
 
 
 [<Extension>]
@@ -14,9 +14,9 @@ type CSharpApiExt =
     
     [<Extension>]
     static member Run(feature: Feature, ifEnable: Func<'a>, ifDisable: Func<'a>) =
-        run feature (ifEnable.Invoke) (ifDisable.Invoke)
+        run (ifEnable.Invoke) (ifDisable.Invoke) feature
         
         
     [<Extension>]
     static member Run(feature: Feature, ifEnable: Action, ifDisable: Action) =
-        run feature ifEnable.Invoke ifDisable.Invoke
+        run ifEnable.Invoke ifDisable.Invoke feature
