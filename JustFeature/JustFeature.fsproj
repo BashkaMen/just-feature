@@ -2,6 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <PackageVersion>0.9.0</PackageVersion>
+        <Title>JustFeature</Title>
+        <Description>small feature toggle mplementation</Description>
+        <PackageProjectUrl>https://github.com/BashkaMen/just-feature</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/BashkaMen/just-feature</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>config</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
