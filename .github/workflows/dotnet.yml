@@ -1,0 +1,39 @@
+name: test and publish to nuget
+on:
+  push:
+    branches:
+      - master
+jobs:
+  
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Setup .NET Core 5.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.101
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Run tests
+      run: dotnet test --no-restore --verbosity normal
+  
+  publish:
+    needs: [ run-tests ]
+    name: build, pack & publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: publish JustFeature on version change
+        id: publish_nuget_main
+        uses: rohith/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: JustFeature/JustFeature.fsproj
+          VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$ 
+          NUGET_KEY: ${{secrets.NUGET_KEY}}
