@@ -2,7 +2,7 @@ name: test and publish to nuget
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   
   run-tests:
