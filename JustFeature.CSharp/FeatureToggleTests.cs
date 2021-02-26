@@ -53,5 +53,21 @@ namespace JustFeature.CSharp
 
             await Task.WhenAll(tasks);
         }
+
+
+        [Fact]
+        public void Simple_usage()
+        {
+            double GetScore()
+                => FeatureToggle.GetOr<TestFeature>(Feature.Disabled).Run(
+                    () => 100,
+                    () => 50
+                );
+
+
+            GetScore().Should().Be(50);
+            FeatureToggle.ConfigureFeature<TestFeature>(Feature.Enabled);
+            GetScore().Should().Be(100);
+        }
     }
 }
